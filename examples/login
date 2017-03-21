@@ -1,0 +1,41 @@
+#!/usr/bin/python
+
+import pamphlet
+import getpass
+import sys, os
+import pwd
+import six
+from whelk import shell
+
+class Example(pamphlet.PamApplication):
+    def conversation(self, messages):
+        for message in messages:
+            if not message.is_prompt:
+                print(message)
+                yield ""
+            elif message.wants_password:
+                yield getpass.getpass(message.rstrip() + ' ')
+            else:
+                yield six.moves.input(message.rstrip() + ' ')
+
+app = Example('pamphlet')
+app.tty = os.ttyname(sys.stdin.fileno())
+if 'DISPLAY' in os.environ:
+    app.xdisplay = os.environ['DISPLAY']
+app.authenticate()
+app.account_management()
+app.initialize_credentials()
+
+user = pwd.getpwnam(app.get_user())
+os.initgroups(user.pw_name, user.pw_gid)
+os.setgid(user.pw_gid)
+os.setegid(user.pw_gid)
+os.setuid(user.pw_uid)
+os.seteuid(user.pw_uid)
+os.chdir(user.pw_dir)
+os.environ['LOGNAME'] = os.environ['USER'] = user.pw_name
+
+app.open_session()
+shell[user.pw_shell]('--login', redirect=False)
+app.close_session()
+app.end()
