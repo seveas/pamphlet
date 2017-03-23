@@ -1,0 +1,7 @@
+*.pyc
+__pycache__
+*.so
+*.o
+build
+dist
+MANIFEST

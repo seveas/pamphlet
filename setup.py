@@ -4,7 +4,7 @@ from distutils.core import setup
 from pamphlet_cffi import ffi
 
 setup(name = "pamphlet",
-      version = "1.0",
+      version = "1.1",
       author = "Dennis Kaarsemaker",
       author_email = "dennis@kaarsemaker.net",
       url = "http://github.com/seveas/pamphlet",
