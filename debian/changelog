@@ -1,3 +1,9 @@
+pamphlet (1.2-2) zesty; urgency=medium
+
+  * Add six to builddeps
+
+ -- Dennis Kaarsemaker <dennis@kaarsemaker.net>  Tue, 18 Apr 2017 15:46:41 +0200
+
 pamphlet (1.2-1) zesty; urgency=medium
 
   * Initial release.
