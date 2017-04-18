@@ -1,0 +1,21 @@
+Source: pamphlet
+Maintainer: Dennis Kaarsemaker <dennis@kaarsemaker.net>
+Section: python
+Priority: optional
+Build-Depends: debhelper (>=10), python-all,  python-setuptools, python3-all, python3-setuptools, python-cffi, python3-cffi, libpam0g-dev, dh-python, python-dev, python3-dev, python-whelk, python3-whelk
+Standards-Version: 3.9.6
+X-Python-Version: >= 2.7
+X-Python3-Version: >= 3.4
+Homepage: http://seveas.github.io/pamphlet
+
+Package: python-pamphlet
+Architecture: all
+Depends: ${misc:Depends}, ${python:Depends}
+Description: Python pam application interface
+ Full pam interface for python 2 applications
+
+Package: python3-pamphlet
+Architecture: all
+Depends: ${misc:Depends}, ${python3:Depends}
+Description: Python pam application interface
+ Full pam interface for python 3 applications
