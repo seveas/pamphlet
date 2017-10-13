@@ -79,7 +79,7 @@ app.change_authtoken()
 ```
 
 Like `authenticate`, `change_authtoken` will use the conversation function to
-interact wit the user, e.g. to ask for a new password.
+interact with the user, e.g. to ask for a new password.
 
 Credentials
 -----------
@@ -169,7 +169,7 @@ supplementary groups are not managed by this and should be set with
 
 `app.get_user(self, prompt=None):`
 
-Get the loginname of the user. This is mostley meant for pam modules, but can
+Get the loginname of the user. This is mostly meant for pam modules, but can
 be used by applications. It may prompt the user for their username using the
 conversation function. Generally, you'll want to read the `user` item instead
 of using this function.
@@ -211,7 +211,7 @@ class ConversationError(PamError):          code = PAM_CONV_ERR
 class CredentialError(PamError):            code = PAM_CRED_ERR
 class CredentialExpired(PamError):          code = PAM_CRED_EXPIRED
 class InsufficientCredentials(PamError):    code = PAM_CRED_INSUFFICIENT
-class CredenrialsUnavailable(PamError):     code = PAM_CRED_UNAVAIL
+class CredentialsUnavailable(PamError):     code = PAM_CRED_UNAVAIL
 class MaxTriesExceeded(PamError):           code = PAM_MAXTRIES
 class NewAuthTokenRequired(PamError):       code = PAM_NEW_AUTHTOK_REQD
 class PermissionDenied(PamError):           code = PAM_PERM_DENIED
