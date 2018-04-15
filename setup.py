@@ -4,7 +4,7 @@ from setuptools import setup
 from pamphlet_cffi import ffi
 
 setup(name = "pamphlet",
-      version = "1.2",
+      version = "1.3",
       author = "Dennis Kaarsemaker",
       author_email = "dennis@kaarsemaker.net",
       url = "http://github.com/seveas/pamphlet",
