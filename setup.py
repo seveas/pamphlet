@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-from distutils.core import setup
+from setuptools import setup
 from pamphlet_cffi import ffi
 
 setup(name = "pamphlet",
